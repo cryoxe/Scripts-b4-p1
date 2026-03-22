@@ -64,12 +64,12 @@ mood department_store/bill 'normal' 'Opening the store.'
 
 touch post_office/.keep
 touch post_office/pelly
-mood post_office/pelly 'cheerful' 'She love her work.'
+mood post_office/pelly 'cheerful' 'She loves her work.'
 
 touch tortimer
 mood tortimer 'thinking' 'He is on his private boat, traveling to the island.'
 
-commit "The day begin: It's 10 AM." 10
+commit "The day begins: It's 10 AM." 10
 
 
 # 11H
@@ -77,10 +77,10 @@ commit "The day begin: It's 10 AM." 10
 mv tortimer beach/tortimer
 mood beach/tortimer 'determined' 'He has arrived on the island.'
 
-mood beach/rudy 'relaxed' 'He helped the old tortimer getting out of his boat.'
+mood beach/rudy 'relaxed' 'He helped old Tortimer get out of his boat.'
 
 mv houses/villager villager
-mood villager 'happy' 'He is walking arround.'
+mood villager 'happy' 'He is walking around.'
 
 mood tom_nook_store/tom_nook 'happy' 'Counting his bells while nobody is here.'
 
@@ -103,7 +103,7 @@ mood museum/tortimer 'thinking' 'Talking with Blathers.'
 mood museum/blathers 'stressed' 'He does not like what Tortimer is telling him.'
 
 mv town_hall/isabelle post_office/isabelle
-mood post_office/isabelle 'normal' 'Dropping a blue letter to the office'
+mood post_office/isabelle 'normal' 'Dropping a blue letter off at the office.'
 
 mood post_office/pelly 'cheerful' 'Gossiping with Isabelle.'
 
@@ -123,7 +123,7 @@ commit "" 12
 mv houses/K.K tom_nook_store/K.K
 mood tom_nook_store/K.K 'groggy' 'He slept too much, and now he needs to buy stuff for tonight.'
 
-mood tom_nook_store/tom_nook 'happy' 'Thinking about how much mony he can extort K.K.'
+mood tom_nook_store/tom_nook 'happy' 'Thinking about how much money he can extort from K.K.'
 
 mv museum/tortimer town_hall/tortimer
 mood town_hall/tortimer 'happy' 'Discussing mortgage with Isabelle.'
@@ -138,7 +138,7 @@ mood department_store/villager 'thinking' 'Thinking about how they could acquire
 
 mood department_store/bill 'happy' 'Really happy to see his favorite customer.'
 
-mood post_office/pelly 'cheerful' 'She love her work.'
+mood post_office/pelly 'cheerful' 'She loves her work.'
 
 commit "" 13
 
@@ -146,28 +146,28 @@ commit "" 13
 # 14H
 # 
 mv town_hall/isabelle tom_nook_store/isabelle
-mood tom_nook_store/isabelle 'relieve' 'She took a break from the Town Hall.
-There is a furniture that she REALLY want.'
+mood tom_nook_store/isabelle 'relieved' 'She took a break from the Town Hall.
+There is a piece of furniture that she REALLY wants.'
 
 mood town_hall/tortimer 'happy' 'He is completely alone in the building.'
 
 mv tom_nook_store/K.K beach/K.K
-mood beach/K.K 'chill' 'He like the feeling of the sand between his paws.'
+mood beach/K.K 'chill' 'He likes the feeling of the sand between his paws.'
 
 mv beach/rudy rudy
 mood rudy 'hurt' 'He is walking away from the beach, he got a sunburn...'
 
-mood museum/blathers 'stressed, thinking' 'Running in circle.'
+mood museum/blathers 'stressed, thinking' 'Running in circles.'
 
 mv post_office/pelly pelly
-mood pelly 'happy' 'Takin a little break from her job.'
+mood pelly 'happy' 'Taking a little break from her job.'
 
 mood tom_nook_store/tom_nook 'happy' 'The day is going well.'
 
 mood department_store/bill 'normal' 'Disappointed that the villager did not buy anything.'
 
 mv department_store/villager villager
-mood villager 'normal' 'Walking arround.'
+mood villager 'normal' 'Walking around.'
 
 commit "" 14
 
@@ -182,7 +182,7 @@ mood blathers 'stressed' 'He is running.'
 
 mv pelly post_office/pelly
 mood post_office/pelly 'cheerful' 'Back to work!
-She received an anonymous red letter from the mail box.'
+She received an anonymous red letter from the mailbox.'
 
 mood town_hall/tortimer 'normal'
 mood department_store/bill 'bored'
@@ -201,21 +201,21 @@ mv blathers post_office/blathers
 mood post_office/blathers 'thinking' 'Reading the content of the letter.'
 
 mood post_office/pelly 'a bit worried' "She just gave a red letter to Blathers.
-He doesn't look to well."
+He doesn't look too well."
 
 mv beach/K.K museum/K.K
 mood museum/K.K 'chill' 'He just wanted to chill in the museum.
-He is surprise to find the museum empty.'
+He is surprised to find the museum empty.'
 
 mood town_hall/tortimer 'concerned' 'He is hoping that the Post Office received his letter.'
 
 mv tom_nook tom_nook_store/tom_nook
-mood tom_nook_store/tom_nook 'happy' 'back in buisness.'
+mood tom_nook_store/tom_nook 'happy' 'Back in business.'
 
 mood town_hall/isabelle 'sleepy'
 mood department_store/bill 'super bored'
 
-mood villager 'elated' 'They just catched a super rare insect!'
+mood villager 'elated' 'They just caught a super rare insect!'
 
 commit "" 16
 
@@ -224,12 +224,12 @@ commit "" 16
 # 
 mood post_office/pelly 'normal'
 
-mood town_hall/isabelle 'sleeeping'
+mood town_hall/isabelle 'sleeping'
 
-mood department_store/bill 'sympathetic' 'He is wondering about giving the gel for free'
+mood department_store/bill 'sympathetic' 'He is wondering about giving the gel away for free.'
 
 mv houses/rudy department_store/rudy
-mood houses/rudy 'hopefull' 'Hoping to get a tube of gel to ease the pain.'
+mood houses/rudy 'hopeful' 'Hoping to get a tube of gel to ease the pain.'
 
 mv post_office/blathers museum/blathers
 mood museum/blathers 'nervous'
@@ -257,10 +257,10 @@ mood houses/villager 'happy' 'Redecorating his house.'
 mood department_store/bill 'bored'
 
 mv museum/K.K tom_nook_store/K.K
-mood tom_nook_store/K.K 'a bit angry' 'He cannot believe that Tom Nook told him that he could buy his guitare.'
+mood tom_nook_store/K.K 'a bit angry' 'He cannot believe that Tom Nook told him that he could buy his guitar.'
 
 mv department_store/rudy houses/rudy
-mood houses/rudy 'happy' 'He is appliying the gel.'
+mood houses/rudy 'happy' 'He is applying the gel.'
 
 mood post_office/pelly 'a bit tired' 'Waiting for her sister.'
 
@@ -271,7 +271,7 @@ commit "" 18
 mood town_hall/isabelle 'tired' 'She woke up and closed the Town Hall.'
 
 mv town_hall/tortimer tortimer
-mood tortimer 'focus' 'He is entering a telephone booth and pickup the phone.'
+mood tortimer 'focused' 'He is entering a telephone booth and picks up the phone.'
 
 mv tom_nook_store/K.K K.K
 mood K.K 'chill' 'He is enjoying the fresh air outside.'
@@ -283,17 +283,17 @@ mood houses/pelly 'tired' 'Going home early.
 Her sister took her place.'
 
 touch post_office/phyllis
-mood post_office/phyllis 'grumpy' 'She hate her job.'
+mood post_office/phyllis 'grumpy' 'She hates her job.'
 
 mood museum/blathers 'calming down' 'He is closing the museum.'
 
-mood houses/rudy 'resting' 'He is doing a nap.'
+mood houses/rudy 'resting' 'He is taking a nap.'
 
 commit "" 19
 
 # 20H
 #
-mood houses/pelly 'sleeping in her house'
+mood houses/pelly 'sleeping in her house.'
 
 mv town_hall/isabelle tom_nook_store/isabelle
 mood tom_nook_store/isabelle 'normal' 'Discussing with Tom Nook to try to see if he can reduce his prices.'
@@ -301,18 +301,18 @@ mood tom_nook_store/isabelle 'normal' 'Discussing with Tom Nook to try to see if
 mv museum/blathers tom_nook_store/blathers
 mood tom_nook_store/blathers 'looks calm' 'He makes use of the key.'
 
-mood tom_nook_store/tom_nook 'distracted' 'He is having a call while disussing with Isabelle.'
+mood tom_nook_store/tom_nook 'distracted' 'He is having a call while discussing things with Isabelle.'
 
-mood tortimer 'calm' 'He is doing a phone call.'
+mood tortimer 'calm' 'He is making a phone call.'
 
 mv K.K houses/K.K
-mood houses/K.K 'chill' 'He is grabbing his guitare.'
+mood houses/K.K 'chill' 'He is grabbing his guitar.'
 
 mv department_store/bill beach/bill
 mood beach/bill 'relaxing'
 
 mv houses/villager villager
-mood villager 'happy' 'Taking a stroll trough the forest.'
+mood villager 'happy' 'Taking a stroll through the forest.'
 
 commit "" 20
 
@@ -333,9 +333,9 @@ mood villager 'worried' 'They got lost in the forest...'
 
 mv houses/rudy beach/rudy
 mood beach/rudy 'happy' "The night is here.
-The sun can't burn him anymore"
+The sun can't burn him anymore."
 
-mood houses/K.K 'chill' 'Practicing the guitare.'
+mood houses/K.K 'chill' 'Practicing the guitar.'
 
 commit "" 21
 
@@ -347,7 +347,7 @@ He is closing his shop.'
 mv tom_nook_store/isabelle houses/isabelle
 mood houses/isabelle 'angry, tired' 'She did not buy anything.'
 
-mood beach/tortimer 'happy' 'He is satisfied with blathers.'
+mood beach/tortimer 'happy' 'He is satisfied with Blathers.'
 
 mv museum/blathers beach/blathers
 mood beach/blathers 'stressed' 'He gives a bag to Tortimer.'
@@ -362,9 +362,9 @@ commit "" 22
 # 23H
 #
 mv houses/K.K beach/K.K
-mood beach/K.K 'chill' 'He is doing his music concert on the beach.'
+mood beach/K.K 'chill' 'He is playing his music concert on the beach.'
 
-mood houses/isabelle 'sleeping in her house'
+mood houses/isabelle 'sleeping in her house.'
 
 mv beach/tortimer tortimer
 mood tortimer 'happy' 'He is leaving the island on his private boat.'
@@ -375,8 +375,8 @@ mv beach/blathers houses/blathers
 mood houses/blathers 'regretful'
 
 
-mood beach/rudy 'happy' "Listening to K.K's concert."
-mood beach/bill 'happy' "Listening to K.K's concert."
+mood beach/rudy 'happy' "Listening to K.K.'s concert."
+mood beach/bill 'happy' "Listening to K.K.'s concert."
 
 mv villager beach/villager
 mood beach/villager 'relieved' 'They found a way out thanks to the music of K.K.'
@@ -384,7 +384,7 @@ mood beach/villager 'relieved' 'They found a way out thanks to the music of K.K.
 
 mv tom_nook_store/tom_nook houses/tom_nook
 mood houses/tom_nook 'thinking' 'He wanted to sleep,
-but he feel like he has forgotten something in his shop.'
+but he feels like he has forgotten something in his shop.'
 
 commit "" 23
 
@@ -413,7 +413,7 @@ mood tom_nook_store/tom_nook 'panicking' 'His bell chest is open!
 Someone stole all his bells!!!'
 
 mood post_office/phyllis 'grumpy' 'Still working...
-stil hating her job.'
+still hating her job.'
 
 git add -A
 date="2025-05-06 00:00:00"
