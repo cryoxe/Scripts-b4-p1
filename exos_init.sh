@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    echo "Nope: You need to use this script inside the Intranet repository"
+    exit 1
+fi
+
 # Storing user's Git identity for restoring
 name=$(git config user.name)
 email=$(git config user.email)
