@@ -7,8 +7,8 @@ if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     exit 1
 fi
 
-mkdir git-history-sim
-cd git-history-sim
+mkdir catch-the-thief
+cd catch-the-thief
 git init --initial-branch=timeline
 
 git config user.name "Bellhaven Correctional Committee"
