@@ -417,7 +417,7 @@ still hating her job.'
 
 git add -A
 date="2025-05-06 00:00:00"
-GIT_COMMITTER_DATE="$date" git commit --allow-empty-message -m "The day is ending: It's 12 AM." --date="$date" > /dev/null 2>&1
+GIT_COMMITTER_DATE="$date" git commit --allow-empty-message -m "The day is ending: It's midnight." --date="$date" > /dev/null 2>&1
 
 echo "The Git repo was successfully created!"
 echo
