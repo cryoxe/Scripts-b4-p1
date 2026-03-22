@@ -17,7 +17,6 @@ git config user.email "tom.nook@acdc.fr"
 echo "Creating save point. Do not turn off the console..."
 git switch -c master 1>/dev/null 2>/dev/null
 git commit -m "Reset" --allow-dry 1>/dev/null 2>/dev/null
-git tag -ma "mark-$(date +%s)"
 
 # Simple merge
 git switch -c merge_simple 1>/dev/null 2>/dev/null
@@ -201,7 +200,7 @@ echo '#include <stdio.h>' > main.c
     echo '    print_stack(stack);';
     echo '';
     echo '    puts("Removing numbers!");';
-    echo '    while (!isEmpty(stack))';
+    echo '    while (!is_empty(stack))';
     echo '        printf("Removing %d\n", pop(stack));';
     echo '';
     echo '    puts("stack: ");';
@@ -262,6 +261,8 @@ echo '#include "stack.h"' > stack.c
     echo 'struct stack *init_stack()';
     echo '{';
     echo '    struct stack *stack = calloc(1, sizeof(struct stack));';
+    echo '    if (!stack)';
+    echo '        return NULL;';
     echo '';
     echo '    return stack;';
     echo '}';
