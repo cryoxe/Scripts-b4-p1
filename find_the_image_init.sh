@@ -7,8 +7,8 @@ if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     exit 1
 fi
 
-mkdir find-culprit-image
-cd find-culprit-image
+mkdir treasure-hunt
+cd treasure-hunt
 git init --initial-branch=master
 
 mkdir ../bellhaven-HQ-remote
