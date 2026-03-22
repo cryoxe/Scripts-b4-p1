@@ -69,7 +69,7 @@ mood post_office/pelly 'cheerful' 'She loves her work.'
 touch tortimer
 mood tortimer 'thinking' 'He is on his private boat, traveling to the island.'
 
-commit "The day begins: It's 10 AM." 10
+commit "The day begins: It's 10." 10
 
 
 # 11H
@@ -92,7 +92,7 @@ mood department_store/bill 'bored'
 
 mood town_hall/isabelle 'normal' 'Waiting for people to enter...'
 
-commit "" 11
+commit "It's 11" 11
 
 
 # 12h
@@ -115,7 +115,7 @@ mood beach/rudy 'relaxed' 'Basking on the beach.
 mv villager beach/villager
 mood beach/villager 'devious' "Thinking about how they could steal Tortimer's boat."
 
-commit "" 12
+commit "It's 12" 12
 
 
 # 13H
@@ -140,7 +140,7 @@ mood department_store/bill 'happy' 'Really happy to see his favorite customer.'
 
 mood post_office/pelly 'cheerful' 'She loves her work.'
 
-commit "" 13
+commit "It's 13" 13
 
 
 # 14H
@@ -169,7 +169,7 @@ mood department_store/bill 'normal' 'Disappointed that the villager did not buy 
 mv department_store/villager villager
 mood villager 'normal' 'Walking around.'
 
-commit "" 14
+commit "It's 14" 14
 
 
 # 15H
@@ -193,7 +193,7 @@ mood houses/rudy 'sad' 'Poor guy...'
 mv tom_nook_store/tom_nook tom_nook
 mood tom_nook 'relaxed' 'Taking a break.'
 
-commit "" 15
+commit "It's 15" 15
 
 
 # 16H
@@ -217,7 +217,7 @@ mood department_store/bill 'super bored'
 
 mood villager 'elated' 'They just caught a super rare insect!'
 
-commit "" 16
+commit "It's 16" 16
 
 
 #17H
@@ -243,7 +243,7 @@ mood town_hall/tortimer 'normal' 'He is waiting and looking at his watch.'
 
 mood tom_nook_store/tom_nook 'normal'
 
-commit "" 17
+commit "It's 17" 17
 
 
 #18H
@@ -264,7 +264,7 @@ mood houses/rudy 'happy' 'He is applying the gel.'
 
 mood post_office/pelly 'a bit tired' 'Waiting for her sister.'
 
-commit "" 18
+commit "It's 18" 18
 
 # 19H
 #
@@ -289,7 +289,7 @@ mood museum/blathers 'calming down' 'He is closing the museum.'
 
 mood houses/rudy 'resting' 'He is taking a nap.'
 
-commit "" 19
+commit "It's 19" 19
 
 # 20H
 #
@@ -314,7 +314,7 @@ mood beach/bill 'relaxing'
 mv houses/villager villager
 mood villager 'happy' 'Taking a stroll through the forest.'
 
-commit "" 20
+commit "It's 20" 20
 
 # 21H
 #
@@ -337,7 +337,7 @@ The sun can't burn him anymore."
 
 mood houses/K.K 'chill' 'Practicing the guitar.'
 
-commit "" 21
+commit "It's 21" 21
 
 # 22H
 # 
@@ -357,7 +357,7 @@ mood beach/rudy 'happy'
 
 mood villager 'worried' 'They are still lost in the forest.'
 
-commit "" 22
+commit "It's 22" 22
 
 # 23H
 #
@@ -386,7 +386,7 @@ mv tom_nook_store/tom_nook houses/tom_nook
 mood houses/tom_nook 'thinking' 'He wanted to sleep,
 but he feels like he has forgotten something in his shop.'
 
-commit "" 23
+commit "It's 23" 23
 
 # 00H
 #
