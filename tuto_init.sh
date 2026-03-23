@@ -10,7 +10,7 @@ fi
 
 echo "Cloning tutorial..."
 
-git clone git@github.com:cryoxe/Tutorial-b4-p1.git tuto_git
+git clone https://github.com/cryoxe/Tutorial-b4-p1.git tuto_git
 
 echo "Download done."
 echo "Preparing repository..."
