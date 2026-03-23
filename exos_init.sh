@@ -15,16 +15,18 @@ git config user.name "Tom Nook"
 git config user.email "tom.nook@acdc.fr"
 
 echo "Creating save point. Do not turn off the console..."
-git switch -c master 1>/dev/null 2>/dev/null
+git switch -C master 1>/dev/null 2>/dev/null
+git add . 1>/dev/null 2>/dev/null
+git stash 1>/dev/null 2>/dev/null
 git commit -m "Reset" --allow-dry 1>/dev/null 2>/dev/null
 
 # Simple merge
-git switch -c merge_simple 1>/dev/null 2>/dev/null
+git switch -C merge_simple 1>/dev/null 2>/dev/null
 echo 'Into this branch!' > merge_simple_file
 git add merge_simple_file 1>/dev/null 2>/dev/null
 git commit -m "feat(simple-merge): add file to simple_merge_branch" 1>/dev/null 2>/dev/null
 
-git switch -c merge_me 1>/dev/null 2>/dev/null
+git switch -C merge_me 1>/dev/null 2>/dev/null
 echo 'Merge this branch' > merge_me_file
 git add merge_me_file 1>/dev/null 2>/dev/null
 git commit -m "feat(simple-merge): add file to merge_me branch" 1>/dev/null 2>/dev/null
@@ -33,7 +35,7 @@ git commit -m "feat(simple-merge): add file to merge_me branch" 1>/dev/null 2>/d
 # Easy merge conflict
 # Setting up branch
 git switch master 1>/dev/null 2>/dev/null
-git switch -c merge_conflict_1 1>/dev/null 2>/dev/null
+git switch -C merge_conflict_1 1>/dev/null 2>/dev/null
 
 echo '#include <stdio.h>' > hello_world.c
 {
@@ -53,7 +55,7 @@ git commit -m "fix: hello_world" 1>/dev/null 2>/dev/null
 
 # Setting up to-be-merged branch
 git switch master 1>/dev/null 2>/dev/null
-git switch -c hello_world_impl 1>/dev/null 2>/dev/null
+git switch -C hello_world_impl 1>/dev/null 2>/dev/null
 echo '#include <stdio.h>' >  hello_world.c
 {
     echo 'int main(void)';
@@ -69,7 +71,7 @@ git commit -m "fix(hello): replace printf with puts" 1>/dev/null 2>/dev/null
 
 # Hard merge conflict
 git switch master 1>/dev/null 2>/dev/null
-git switch -c merge_conflict_2 1>/dev/null 2>/dev/null
+git switch -C merge_conflict_2 1>/dev/null 2>/dev/null
 
 echo '#ifndef STACK_H' > stack.h
 {
@@ -250,7 +252,7 @@ git config user.name "Tom Nook"
 git config user.email "tom.nook@acdc.fr"
 
 git checkout "$split_hash" 1>/dev/null 2>/dev/null
-git switch -c add_stack_impl 1>/dev/null 2>/dev/null
+git switch -C add_stack_impl 1>/dev/null 2>/dev/null
 
 echo '#include "stack.h"' > stack.c
 {
@@ -441,6 +443,7 @@ git add .gitignore 1>/dev/null 2>/dev/null
 git commit -m "chore: add gitignore" 1>/dev/null 2>/dev/null
 
 git switch master 1>/dev/null 2>/dev/null
+git stash pop 1>/dev/null 2>/dev/null
 
 # Restore Git identity
 git config user.name "$name"
