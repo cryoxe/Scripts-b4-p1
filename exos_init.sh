@@ -1,41 +1,61 @@
 #!/bin/sh
 
-
 if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     echo "Nope: You need to use this script inside the Intranet repository"
     exit 1
 fi
 
-# Storing user's Git identity for restoring
+path=${PWD##*/}
+if [ $path != "Git_Advanced" ]; then
+    echo "Nope: You need to run this script from the Git_Advanced repository"
+    exit 1
+fi
+
 name=$(git config user.name)
 email=$(git config user.email)
+
+if [ -z $name ] || [ -z $email ]; then
+    echo "Make sure to setup your git identity using these commands:"
+    echo -e "\tgit config user.name \"Your Name\""
+    echo -e "\tgit config user.email \"example@email.com\""
+    exit 1
+fi
 
 # Changing Git identity to create Given Files
 git config user.name "Tom Nook"
 git config user.email "tom.nook@acdc.fr"
 
 echo "Creating save point. Do not turn off the console..."
-git switch -C master 1>/dev/null 2>/dev/null
-git add . 1>/dev/null 2>/dev/null
-git stash 1>/dev/null 2>/dev/null
-git commit -m "Reset" --allow-dry 1>/dev/null 2>/dev/null
+git switch master 1>/dev/null
+git add . 1>/dev/null
+git stash 1>/dev/null
+git commit -m "Reset" --allow-empty 1>/dev/null
 
 # Simple merge
-git switch -C merge_simple 1>/dev/null 2>/dev/null
+if ! git rev-parse --verify merge_simple >/dev/null 2>&1; then
+    git branch merge_simple
+fi
+git switch merge_simple 1>/dev/null
 echo 'Into this branch!' > merge_simple_file
-git add merge_simple_file 1>/dev/null 2>/dev/null
-git commit -m "feat(simple-merge): add file to simple_merge_branch" 1>/dev/null 2>/dev/null
+git add merge_simple_file 1>/dev/null
+git commit -m "feat(simple-merge): add file to simple_merge_branch" 1>/dev/null
 
-git switch -C merge_me 1>/dev/null 2>/dev/null
+if ! git rev-parse --verify merge_me >/dev/null 2>&1; then
+    git branch merge_me
+fi
+git switch merge_me 1>/dev/null
 echo 'Merge this branch' > merge_me_file
-git add merge_me_file 1>/dev/null 2>/dev/null
-git commit -m "feat(simple-merge): add file to merge_me branch" 1>/dev/null 2>/dev/null
+git add merge_me_file 1>/dev/null
+git commit -m "feat(simple-merge): add file to merge_me branch" 1>/dev/null
 
 
 # Easy merge conflict
 # Setting up branch
-git switch master 1>/dev/null 2>/dev/null
-git switch -C merge_conflict_1 1>/dev/null 2>/dev/null
+git switch master 1>/dev/null
+if ! git rev-parse --verify merge_conflict_1 >/dev/null 2>&1; then
+    git branch merge_conflict_1
+fi
+git switch merge_conflict_1 1>/dev/null
 
 echo '#include <stdio.h>' > hello_world.c
 {
@@ -46,16 +66,20 @@ echo '#include <stdio.h>' > hello_world.c
     echo '}';
 } >> hello_world.c
 
-git add hello_world.c 1>/dev/null 2>/dev/null
-git commit -m "feat: add hello_world" 1>/dev/null 2>/dev/null
+git add hello_world.c 1>/dev/null
+git commit -m "feat: add hello_world" 1>/dev/null
 
 sed -i '5i    printf("Hello World!);"' hello_world.c
-git add hello_world.c 1>/dev/null 2>/dev/null
-git commit -m "fix: hello_world" 1>/dev/null 2>/dev/null
+git add hello_world.c 1>/dev/null
+git commit -m "fix: hello_world" 1>/dev/null
 
 # Setting up to-be-merged branch
-git switch master 1>/dev/null 2>/dev/null
-git switch -C hello_world_impl 1>/dev/null 2>/dev/null
+git switch master 1>/dev/null
+
+if ! git rev-parse --verify hello_world_impl >/dev/null 2>&1; then
+    git branch hello_world_impl
+fi
+git switch hello_world_impl 1>/dev/null
 echo '#include <stdio.h>' >  hello_world.c
 {
     echo 'int main(void)';
@@ -65,13 +89,17 @@ echo '#include <stdio.h>' >  hello_world.c
     echo '}';
 } >> hello_world.c
 
-git add hello_world.c 1>/dev/null 2>/dev/null
-git commit -m "fix(hello): replace printf with puts" 1>/dev/null 2>/dev/null
+git add hello_world.c 1>/dev/null
+git commit -m "fix(hello): replace printf with puts" 1>/dev/null
 
 
 # Hard merge conflict
-git switch master 1>/dev/null 2>/dev/null
-git switch -C merge_conflict_2 1>/dev/null 2>/dev/null
+git switch master 1>/dev/null
+
+if ! git rev-parse --verify merge_conflict_2 >/dev/null 2>&1; then
+    git branch merge_conflict_2
+fi
+git switch merge_conflict_2 1>/dev/null
 
 echo '#ifndef STACK_H' > stack.h
 {
@@ -97,8 +125,8 @@ echo '#ifndef STACK_H' > stack.h
     echo '#endif // ! STACK_H';
 } >> stack.h
 
-git add stack.h 1>/dev/null 2>/dev/null
-git commit -m "feat: add stack.h" 1>/dev/null 2>/dev/null
+git add stack.h 1>/dev/null
+git commit -m "feat: add stack.h" 1>/dev/null
 
 
 split_hash=$(git rev-parse HEAD)
@@ -183,8 +211,8 @@ echo '#include "stack.h"' > stack.c
     echo '}';
 } >> stack.c
 
-git add stack.c 1>/dev/null 2>/dev/null
-git commit -m "feat: added stack.c" 1>/dev/null 2>/dev/null
+git add stack.c 1>/dev/null
+git commit -m "feat: added stack.c" 1>/dev/null
 
 echo '#include <stdio.h>' > main.c
 {
@@ -212,8 +240,8 @@ echo '#include <stdio.h>' > main.c
     echo '}';
 } >> main.c
 
-git add main.c 1>/dev/null 2>/dev/null
-git commit -m "feat: added main.c" 1>/dev/null 2>/dev/null
+git add main.c 1>/dev/null
+git commit -m "feat: added main.c" 1>/dev/null
 
 echo 'CC = clang' > Makefile
 {
@@ -243,8 +271,8 @@ echo 'CC = clang' > Makefile
     echo '	$(RM) $(OBJS) $(BIN)';
 } >> Makefile
 
-git add Makefile 1>/dev/null 2>/dev/null
-git commit -m "build: add Makefile" 1>/dev/null 2>/dev/null
+git add Makefile 1>/dev/null
+git commit -m "build: add Makefile" 1>/dev/null
 
 # Now to setup to be merged branch
 
@@ -252,7 +280,10 @@ git config user.name "Tom Nook"
 git config user.email "tom.nook@acdc.fr"
 
 git checkout "$split_hash" 1>/dev/null 2>/dev/null
-git switch -C add_stack_impl 1>/dev/null 2>/dev/null
+if ! git rev-parse --verify add_stack_impl >/dev/null 2>&1; then
+    git branch add_stack_impl
+fi
+git switch add_stack_impl 1>/dev/null
 
 echo '#include "stack.h"' > stack.c
 {
@@ -341,8 +372,8 @@ echo '#include "stack.h"' > stack.c
     echo '}';
 } >> stack.c
 
-git add stack.c 1>/dev/null 2>/dev/null
-git commit -m "feat: add stack.c" 1>/dev/null 2>/dev/null
+git add stack.c 1>/dev/null
+git commit -m "feat: add stack.c" 1>/dev/null
 
 echo 'CC = gcc' > Makefile
 {
@@ -372,8 +403,8 @@ echo 'CC = gcc' > Makefile
     echo '	$(RM) $(OBJS) $(BIN)';
 } >> Makefile
 
-git add Makefile 1>/dev/null 2>/dev/null
-git commit -m "build: add Makefile" 1>/dev/null 2>/dev/null
+git add Makefile 1>/dev/null
+git commit -m "build: add Makefile" 1>/dev/null
 
 echo '# Created by https://www.toptal.com/developers/gitignore/api/c' > .gitignore
 {
@@ -439,11 +470,11 @@ echo '# Created by https://www.toptal.com/developers/gitignore/api/c' > .gitigno
     echo 'main';
 } >> .gitignore
 
-git add .gitignore 1>/dev/null 2>/dev/null
-git commit -m "chore: add gitignore" 1>/dev/null 2>/dev/null
+git add .gitignore 1>/dev/null
+git commit -m "chore: add gitignore" 1>/dev/null
 
-git switch master 1>/dev/null 2>/dev/null
-git stash pop 1>/dev/null 2>/dev/null
+git switch master 1>/dev/null
+git stash pop 1>/dev/null
 
 # Restore Git identity
 git config user.name "$name"
