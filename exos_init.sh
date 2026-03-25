@@ -69,7 +69,7 @@ echo '#include <stdio.h>' > hello_world.c
 git add hello_world.c 1>/dev/null
 git commit -m "feat: add hello_world" 1>/dev/null
 
-sed -i '5i    printf("Hello World!);"' hello_world.c
+sed -i '5i    printf("Hello World!");' hello_world.c
 git add hello_world.c 1>/dev/null
 git commit -m "fix: hello_world" 1>/dev/null
 
